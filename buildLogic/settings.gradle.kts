@@ -7,4 +7,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "buildLogic"
 includeBuild("dependencies")
-includeBuild("plugins")
+include("plugins")

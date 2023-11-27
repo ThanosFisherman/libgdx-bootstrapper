@@ -1,9 +1,8 @@
-pluginManagement {
-    includeBuild("buildLogic")
+dependencyResolutionManagement {
+    //repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        mavenCentral()
         google()
-        gradlePluginPortal()
+        mavenCentral()
         maven("https://jitpack.io")
         maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots/") }
         maven { url = uri("https://oss.sonatype.org/content/repositories/releases/") }
@@ -11,11 +10,12 @@ pluginManagement {
     }
 }
 
-dependencyResolutionManagement {
-    //repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+pluginManagement {
+    includeBuild("buildLogic")
     repositories {
-        google()
         mavenCentral()
+        google()
+        gradlePluginPortal()
         maven("https://jitpack.io")
         maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots/") }
         maven { url = uri("https://oss.sonatype.org/content/repositories/releases/") }

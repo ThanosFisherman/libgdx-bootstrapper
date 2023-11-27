@@ -23,7 +23,9 @@ dependencies {
 tasks.withType<Test>().configureEach {
     testLogging { showStandardStreams = true }
 }
-
+tasks.getByName<Delete>("clean") {
+    delete(rootProject.layout.buildDirectory)
+}
 gradlePlugin {
     plugins {
         register("base-plugin-kotlin") {
