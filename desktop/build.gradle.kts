@@ -1,7 +1,7 @@
 import org.gradle.jvm.tasks.Jar
 
 plugins {
-    `base-plugin-kotlin`
+    id("base-plugin-kotlin")
     application
 }
 

@@ -24,7 +24,7 @@ tasks.withType<Test>().configureEach {
 gradlePlugin {
     plugins {
         register("dependencies") {
-            id = "dependencies"
+            id = "game.dependencies"
             implementationClass = "io.github.thanosfisherman.game.dependencies.DependenciesPlugin"
         }
     }

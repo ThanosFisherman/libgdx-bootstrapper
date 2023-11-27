@@ -1,5 +1,5 @@
 plugins {
-    //id("base-plugin-kotlin")
+    id("base-plugin-kotlin")
 }
 
 

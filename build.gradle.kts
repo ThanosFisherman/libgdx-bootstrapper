@@ -4,6 +4,7 @@ plugins {
     //id("org.jetbrains.kotlin.android") version Versions.Plugins.kgpVersion apply false
     //id("org.jetbrains.kotlin.jvm") version Versions.Plugins.kgpVersion
     base
+    id("game.dependencies")
 }
 
 allprojects {

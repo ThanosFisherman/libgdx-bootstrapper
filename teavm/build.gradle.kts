@@ -1,5 +1,5 @@
 plugins {
-    `base-plugin-kotlin`
+    id("base-plugin-kotlin")
     id(Dependencies.Plugins.GRETTY_APPLY) version Versions.Plugins.grettyVersion
 }
 

@@ -5,6 +5,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "buildLogic"
-includeBuild("dependencies")
-includeBuild("plugins")
+rootProject.name = "plugins"
+includeBuild("../dependencies")
