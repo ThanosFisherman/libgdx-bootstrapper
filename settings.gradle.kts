@@ -1,4 +1,7 @@
 pluginManagement {
+    includeBuild("buildLogic/dependencies")
+    includeBuild("buildLogic/plugins")
+
     repositories {
         mavenCentral()
         google()
@@ -22,12 +25,11 @@ dependencyResolutionManagement {
     }
 }
 
-plugins {
-    id("org.gradle.toolchains.foojay-resolver-convention") version "0.5.0"
-}
+
 
 rootProject.name = "libgdx-bootstrapper"
-include("teavm")
-include("desktop")
-include("core")
-include("android")
+//include("teavm")
+//include("desktop")
+//include("core")
+//include("android")
+

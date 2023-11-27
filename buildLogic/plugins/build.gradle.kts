@@ -1,8 +1,22 @@
+import org.jetbrains.kotlin.fir.declarations.builder.buildScript
 
 plugins {
     `kotlin-dsl`
     `java-gradle-plugin`
+    id("dependencies")
 }
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        //classpath(project(":dependencies"))
+    }
+}
+group = "io.github.thanosfisherman.game.plugins"
+version = "1.0"
 
 repositories {
     google()
@@ -13,6 +27,7 @@ repositories {
 dependencies {
     implementation(Dependencies.Plugins.ANDROID_GRADLE_PLUGIN)
     implementation(Dependencies.Plugins.KOTLIN_GRADLE_PLUGIN)
+
 }
 
 tasks.withType<Test>().configureEach {
@@ -21,14 +36,14 @@ tasks.withType<Test>().configureEach {
 
 gradlePlugin {
     plugins {
-        register("base-plugin-kotlin") {
+        create("base-plugin-kotlin") {
             id = "base-plugin-kotlin"
-            implementationClass = "plugins.BasePluginKotlin"
+            implementationClass = "BasePluginKotlin"
         }
 
-        register("base-plugin-android") {
+        create("base-plugin-android") {
             id = "base-plugin-android"
-            implementationClass = "plugins.BasePluginAndroid"
+            implementationClass = "BasePluginAndroid"
         }
     }
 }

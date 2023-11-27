@@ -1,10 +1,8 @@
 plugins {
-    `base-plugin-kotlin`
+    //id("base-plugin-kotlin")
 }
 
-tasks.test {
-    useJUnitPlatform()
-}
+
 
 val assetsDir = rootProject.files("assets")
 sourceSets {
