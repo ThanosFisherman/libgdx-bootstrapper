@@ -23,7 +23,6 @@ object Versions {
 
     object Plugins {
         const val agpVersion = "8.1.4"
-        const val kgpVersion = "1.9.0"
 
         const val desugaring = "1.2.2"
 
