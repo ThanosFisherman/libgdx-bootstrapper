@@ -3,7 +3,7 @@ plugins {
     //id("com.android.library") version Versions.Plugins.agpVersion apply false
 //    id("org.jetbrains.kotlin.android") version "1.9.21" apply false
 //    id("org.jetbrains.kotlin.jvm") version "1.9.21" apply false
-    id("game.dependencies")
+    //id("game.dependencies")
 }
 
 buildscript {
@@ -12,7 +12,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:8.1.4")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.21")
+        classpath(Dependencies.Plugins.ANDROID_GRADLE_PLUGIN)
+        classpath(Dependencies.Plugins.KOTLIN_GRADLE_PLUGIN)
     }
 }

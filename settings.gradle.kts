@@ -11,7 +11,6 @@ dependencyResolutionManagement {
 }
 
 pluginManagement {
-    includeBuild("buildLogic")
     repositories {
         mavenCentral()
         google()
@@ -23,10 +22,9 @@ pluginManagement {
     }
 }
 
-
-
 rootProject.name = "libgdx-bootstrapper"
 
+includeBuild("buildLogic")
 include("teavm")
 include("desktop")
 include("core")
