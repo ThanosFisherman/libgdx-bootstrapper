@@ -16,9 +16,9 @@ object Versions {
     // endregion
 
     object Android {
-        const val compileSdkVersion = 34
-        const val minSdkVersion = 23
-        const val targetSdkVersion = 34
+        const val compileSdkVersion = 35
+        const val minSdkVersion = 24
+        const val targetSdkVersion = 35
     }
 
     object Plugins {
@@ -29,7 +29,7 @@ object Versions {
         const val googlePlayServices = "4.3.10"
 
         const val undercouch = "5.6.0"
-        const val grettyVersion = "3.1.2"
+        const val grettyVersion = "3.1.5"
     }
 
     object Libgdx {
@@ -39,6 +39,7 @@ object Versions {
         const val gdxControllerUtilsVersion = "2.3.0"
         const val ktxVersion = "1.13.1-rc1"
         const val gdxTeaVMVersion = "1.1.0"
+        const val teaVMVersion = "0.11.0"
         const val box2dlightsVersion = "1.5"
         const val aiVersion = "1.8.2"
         const val kryoVersion = "5.5.0"
@@ -54,8 +55,8 @@ object Versions {
         const val universalTweenVersion = "6.3.3"
         const val graalVersion = "2.0.1"
         const val ode4jVersion = "master-SNAPSHOT"
-        const val juniperVersion = "0.6.3"
-        const val juniperDigitalVersion = "0.5.4"
+        const val juniperVersion = "0.6.5"
+        const val juniperDigitalVersion = "0.6.1"
     }
 
 

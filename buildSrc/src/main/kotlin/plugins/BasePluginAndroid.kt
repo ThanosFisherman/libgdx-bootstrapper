@@ -61,8 +61,8 @@ class BasePluginAndroid : Plugin<Project> {
 
             defaultConfig {
                 applicationId = "io.github.thanosfisherman.game.android"
-                minSdk = 24
-                targetSdk = 34
+                minSdk = Versions.Android.minSdkVersion
+                targetSdk = Versions.Android.targetSdkVersion
                 versionCode = 1
                 versionName = "1.0"
 
