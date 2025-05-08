@@ -88,6 +88,15 @@ class BasePluginAndroid : Plugin<Project> {
                         add("LICENSE.txt")
                         add("NOTICE")
                     }
+                    pickFirsts.apply {
+                        add("META-INF/LICENSE.txt")
+                        add("META-INF/LICENSE")
+                        add("META-INF/license.txt")
+                        add("META-INF/LGPL2.1")
+                        add("META-INF/NOTICE.txt")
+                        add("META-INF/NOTICE")
+                        add("META-INF/notice.txt")
+                    }
                 }
             }
         }
