@@ -33,28 +33,26 @@ fun Project.registerDesktopTasks(mainClass: String) {
     }
 
     tasks.getByName<Jar>("jar") {
-        // sets the name of the .jar file this produces to the name of the game or app.
+        // sets the name of the .jar file this produces to the name of the game or app, with the version after.
         archiveFileName.set("${project.name}-${project.version}.jar")
         // the duplicatesStrategy matters starting in Gradle 7.0; this setting works.
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-        dependsOn(configurations.named("runtimeClasspath"))
+        val runtimeClasspath = configurations.getByName("runtimeClasspath")
+        dependsOn(runtimeClasspath)
 
 //        val destDir = file(project.layout.buildDirectory.asFile.get().absolutePath + File.separator + "lib")
 //        // using 'lib' instead of the default 'libs' appears to be needed by jpackageimage.
 //        destinationDirectory.set(destDir)
 
-        println(configurations)
-
-        val runtimeClasspath = configurations.getByName("runtimeClasspath")
-        from(runtimeClasspath.map { if (it.isDirectory) it else zipTree(it) })
+        from({
+            runtimeClasspath.map { file ->
+                if (file.isDirectory) file else zipTree(file)
+            }
+        })
 
         // these "exclude" lines remove some unnecessary duplicate files in the output JAR.
-        excludes.apply {
-            add("META-INF/INDEX.LIST")
-            add("META-INF/*.SF")
-            add("META-INF/*.DSA")
-            add("META-INF/*.RSA")
-        }
+        exclude("META-INF/INDEX.LIST", "META-INF/*.SF", "META-INF/*.DSA", "META-INF/*.RSA")
+
         dependencies {
             exclude("META-INF/INDEX.LIST", "META-INF/maven/**")
         }
@@ -67,30 +65,30 @@ fun Project.registerDesktopTasks(mainClass: String) {
             file(archiveFile).setExecutable(true, false)
         }
     }
+
     // Builds a JAR that only includes the files needed to run on macOS, not Windows or Linux.
     // The file size for a Mac-only JAR is about 7MB smaller than a cross-platform JAR.
-    tasks.register<Jar>("jarMac") {
-        dependsOn(tasks.named("jar"))
+    tasks.register("jarMac") {
+        val jar = tasks.getByName<Jar>("jar")
+        dependsOn(jar)
         group = "build"
-
-        val jar = tasks.named<Jar>("jar").get()
+        description = "Builds a Mac-only JAR"
 
         jar.archiveFileName.set("${project.name}-${project.version}-mac.jar")
 
-        jar.excludes.apply {
-            add("windows/x86/**")
-            add("windows/x64/**")
-            add("linux/arm32/**")
-            add("linux/arm64/**")
-            add("linux/x64/**")
-            add("**/*.dll")
-            add("**/*.so")
-            add("META-INF/INDEX.LIST")
-            add("META-INF/*.SF")
-            add("META-INF/*.DSA")
-            add("META-INF/*.RSA")
-        }
-
+        jar.exclude(
+            "windows/x86/**",
+            "windows/x64/**",
+            "linux/arm32/**",
+            "linux/arm64/**",
+            "linux/x64/**",
+            "**/*.dll",
+            "**/*.so",
+            "META-INF/INDEX.LIST",
+            "META-INF/*.SF",
+            "META-INF/*.DSA",
+            "META-INF/*.RSA",
+        )
         dependencies {
             jar.exclude(
                 "windows/x86/**",
@@ -106,11 +104,12 @@ fun Project.registerDesktopTasks(mainClass: String) {
 
     // Builds a JAR that only includes the files needed to run on Linux, not Windows or macOS.
     // The file size for a Linux-only JAR is about 5MB smaller than a cross-platform JAR.
-    tasks.register<Jar>("jarLinux") {
-        dependsOn(tasks.named("jar"))
+    tasks.register("jarLinux") {
+        val jar = tasks.getByName<Jar>("jar")
+        dependsOn(jar)
         group = "build"
+        description = "Builds a Linux-only JAR"
 
-        val jar = tasks.named<Jar>("jar").get()
         jar.archiveFileName.set("${project.name}-${project.version}-linux.jar")
 
         jar.excludes.apply {
@@ -140,11 +139,12 @@ fun Project.registerDesktopTasks(mainClass: String) {
 
     // Builds a JAR that only includes the files needed to run on Windows, not Linux or macOS.
     // The file size for a Windows-only JAR is about 6MB smaller than a cross-platform JAR.
-    tasks.register<Jar>("jarWin") {
-        dependsOn(tasks.named("jar"))
+    tasks.register("jarWin") {
+        val jar = tasks.getByName<Jar>("jar")
+        dependsOn(jar)
         group = "build"
+        description = "Builds a Windows-only JAR"
 
-        val jar = tasks.named<Jar>("jar").get()
         jar.archiveFileName.set("${project.name}-${project.version}-win.jar")
 
         jar.excludes.apply {
