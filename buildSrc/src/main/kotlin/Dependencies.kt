@@ -56,8 +56,7 @@ object Dependencies {
         const val juniperDigitalTeaVM =
             "com.github.tommyettinger:digital:${Versions.Libgdx.juniperDigitalVersion}:sources"
         const val juniperTeaVM = "com.github.tommyettinger:juniper:${Versions.Libgdx.juniperVersion}:sources"
-//        const val gdxTeaVMFreeType =
-//            "com.github.xpenatan.gdx-teavm:gdx-freetype-teavm:${Versions.Libgdx.gdxTeaVMVersion}"
+        const val gdxTeaVMFreeType = "com.github.xpenatan.gdx-teavm:gdx-freetype-teavm:${Versions.Libgdx.gdxTeaVMVersion}"
 //        const val box2d = "com.badlogicgames.gdx:gdx-box2d-gwt:${Versions.Libgdx.gdxVersion}"
 //        const val bulletTeaVm = "com.github.xpenatan.gdx-teavm:gdx-bullet-teavm:${Versions.Libgdx.gdxTeaVMVersion}"
 
@@ -106,14 +105,14 @@ object Dependencies {
 //            "com.badlogicgames.gdx:gdx-bullet-platform:${Versions.Libgdx.gdxVersion}:natives-x86"
 //        const val bullet_nativesX86_64 =
 //            "com.badlogicgames.gdx:gdx-bullet-platform:${Versions.Libgdx.gdxVersion}:natives-x86_64"
-//        const val freetype_arm64v8a =
-//            "com.badlogicgames.gdx:gdx-freetype-platform:${Versions.Libgdx.gdxVersion}:natives-arm64-v8a"
-//        const val freetype_armeabiv7a =
-//            "com.badlogicgames.gdx:gdx-freetype-platform:${Versions.Libgdx.gdxVersion}:natives-armeabi-v7a"
-//        const val freetype_nativesX86 =
-//            "com.badlogicgames.gdx:gdx-freetype-platform:${Versions.Libgdx.gdxVersion}:natives-x86"
-//        const val freetype_nativesX86_64 =
-//            "com.badlogicgames.gdx:gdx-freetype-platform:${Versions.Libgdx.gdxVersion}:natives-x86_64"
+const val freetype_arm64v8a =
+    "com.badlogicgames.gdx:gdx-freetype-platform:${Versions.Libgdx.gdxVersion}:natives-arm64-v8a"
+        const val freetype_armeabiv7a =
+            "com.badlogicgames.gdx:gdx-freetype-platform:${Versions.Libgdx.gdxVersion}:natives-armeabi-v7a"
+        const val freetype_nativesX86 =
+            "com.badlogicgames.gdx:gdx-freetype-platform:${Versions.Libgdx.gdxVersion}:natives-x86"
+        const val freetype_nativesX86_64 =
+            "com.badlogicgames.gdx:gdx-freetype-platform:${Versions.Libgdx.gdxVersion}:natives-x86_64"
 //
 //        const val miniaudio_arm64v8a =
 //            "games.rednblack.miniaudio:miniaudio:${Versions.Libgdx.miniaudioVersion}:natives-arm64-v8a"

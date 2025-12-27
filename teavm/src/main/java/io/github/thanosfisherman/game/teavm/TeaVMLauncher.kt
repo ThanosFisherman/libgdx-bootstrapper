@@ -4,8 +4,6 @@ package io.github.thanosfisherman.game.teavm
 
 import com.github.xpenatan.gdx.backends.teavm.TeaApplication
 import com.github.xpenatan.gdx.backends.teavm.TeaApplicationConfiguration
-import com.github.xpenatan.gdx.backends.teavm.assetloader.AssetInstance
-import com.github.xpenatan.gdx.backends.teavm.assetloader.AssetLoader
 import io.github.thanosfisherman.game.Game.Companion.create
 
 
@@ -29,8 +27,6 @@ object TeaVMLauncher {
             width = 0
             height = 0
         }
-
-
         TeaApplication(create(), config)
     }
 }
