@@ -22,9 +22,7 @@ object Versions {
 
     object Plugins {
         const val agpVersion = "8.13.2"
-
         const val undercouch = "5.6.0"
-        const val grettyVersion = "3.1.8"
     }
 
     object Libgdx {
@@ -33,7 +31,7 @@ object Versions {
         const val gdxControllersVersion = "2.2.1"
         const val gdxControllerUtilsVersion = "2.3.0"
         const val ktxVersion = "1.13.1-rc1"
-        const val gdxTeaVMVersion = "1.4.0"
+        const val gdxTeaVMVersion = "1.5.1"
         const val teaVMVersion = "0.13.0"
         const val box2dlightsVersion = "1.5"
         const val aiVersion = "1.8.2"

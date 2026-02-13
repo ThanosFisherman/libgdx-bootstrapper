@@ -2,8 +2,9 @@
 
 package io.github.thanosfisherman.game.teavm
 
-import com.github.xpenatan.gdx.backends.teavm.TeaApplication
-import com.github.xpenatan.gdx.backends.teavm.TeaApplicationConfiguration
+
+import com.github.xpenatan.gdx.teavm.backends.web.WebApplication
+import com.github.xpenatan.gdx.teavm.backends.web.WebApplicationConfiguration
 import io.github.thanosfisherman.game.Game.Companion.create
 
 
@@ -18,7 +19,7 @@ import io.github.thanosfisherman.game.Game.Companion.create
 object TeaVMLauncher {
     @JvmStatic
     fun main(args: Array<String>) {
-        val config = TeaApplicationConfiguration("canvas").apply {
+        val config = WebApplicationConfiguration("canvas").apply {
             usePhysicalPixels = false
             antialiasing = true
             showDownloadLogs = false
@@ -27,6 +28,6 @@ object TeaVMLauncher {
             width = 0
             height = 0
         }
-        TeaApplication(create(), config)
+        WebApplication(create(), config)
     }
 }

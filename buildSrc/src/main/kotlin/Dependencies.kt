@@ -14,8 +14,6 @@ object Dependencies {
 
         const val UNDERCOUCH = "de.undercouch:gradle-download-task:${Versions.Plugins.undercouch}"
 
-        const val GRETTY_PLUGIN = "org.gretty:gretty:${Versions.Plugins.grettyVersion}"
-
         const val ANDROID_APPLICATION_APPLY = "com.android.application"
         const val ANDROID_LIBRARY_APPLY = "com.android.library"
         const val GOOGLE_PLAY_SERVICES_APPLY = "com.google.gms.google-services"
@@ -51,7 +49,7 @@ object Dependencies {
 
     object TeaVMDependency {
 
-        const val gdxTeaVM = "com.github.xpenatan.gdx-teavm:backend-teavm:${Versions.Libgdx.gdxTeaVMVersion}"
+        const val gdxTeaVM = "com.github.xpenatan.gdx-teavm:backend-web:${Versions.Libgdx.gdxTeaVMVersion}"
         const val gdxTeaVMAssetLoader = "com.github.xpenatan.gdx-teavm:asset-loader:${Versions.Libgdx.gdxTeaVMVersion}"
         const val juniperDigitalTeaVM =
             "com.github.tommyettinger:digital:${Versions.Libgdx.juniperDigitalVersion}:sources"
